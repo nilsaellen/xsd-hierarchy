@@ -83,4 +83,14 @@ public class XsdParserTest {
         Assert.assertEquals("element3", children.get(2).getName());
         Assert.assertEquals(namespace, children.get(2).getNamespace());
     }
+
+    @Test
+    public void testUnknownSCD() throws Exception {
+        MapNamespaceContext ctx = new MapNamespaceContext();
+        ctx.register("", namespace);
+
+        List<XsdElement> children = parser.getChildren("/somethingElse//other", ctx);
+
+        Assert.assertNull(children);
+    }
 }

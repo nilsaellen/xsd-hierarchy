@@ -39,19 +39,19 @@ public class XsdParser {
     public List<XsdElement> getChildren(String scd, NamespaceContext ctx) throws SAXException {
         ElementDecl c = (ElementDecl) parser.getResult().selectSingle(scd, ctx);
 
-        return getChildren(c);
-    }
+        if (c != null) {
+            List<XsdElement> result = new ArrayList<>();
 
-    private List<XsdElement> getChildren(ElementDecl ed) {
-        List<XsdElement> result = new ArrayList<>();
+            ComplexTypeImpl type = (ComplexTypeImpl) c.getType();
+            ParticleImpl ct = (ParticleImpl) type.getContentType();
+            ModelGroupImpl term = (ModelGroupImpl) ct.getTerm();
 
-        ComplexTypeImpl type = (ComplexTypeImpl) ed.getType();
-        ParticleImpl ct = (ParticleImpl) type.getContentType();
-        ModelGroupImpl term = (ModelGroupImpl) ct.getTerm();
+            recurse(result, term);
 
-        recurse(result, term);
-
-        return result;
+            return result;
+        } else {
+            return null;
+        }
     }
 
     private void recurse(List<XsdElement> result, ModelGroupImpl term) {
