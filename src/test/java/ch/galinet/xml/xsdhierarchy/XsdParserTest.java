@@ -1,4 +1,4 @@
-package org.aellen.xml.xsd;
+package ch.galinet.xml.xsdhierarchy;
 
 import org.junit.Assert;
 import org.junit.Before;

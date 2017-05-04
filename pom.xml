@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.aellen.xml</groupId>
+	<groupId>ch.galinet.xml</groupId>
 	<artifactId>xsd-hierarchy</artifactId>
 	<version>0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
@@ -20,6 +20,19 @@
 		</plugins>
 	</build>
 
+	<distributionManagement>
+		<repository>
+			<id>artifactory-releases</id>
+			<name>artifactory.pnet.ch-releases</name>
+			<url>http://artifactory.pnet.ch/artifactory/libs-release-local</url>
+		</repository>
+		<snapshotRepository>
+			<id>artifactory-snapshots</id>
+			<name>artifactory.pnet.ch-snapshots</name>
+			<url>http://artifactory.pnet.ch/artifactory/libs-snapshot-local</url>
+		</snapshotRepository>
+	</distributionManagement>
+
 	<dependencies>
 		<!-- Third party tools -->
 		<dependency>
@@ -28,12 +41,30 @@
 			<version>2.3.0-b170127.1453</version>
 		</dependency>
 		<dependency>
+			<groupId>jdom</groupId>
+			<artifactId>jdom</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.5</version>
+		</dependency>
+		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+			<comments>A business-friendly OSS license</comments>
+		</license>
+	</licenses>
 </project>
 
 

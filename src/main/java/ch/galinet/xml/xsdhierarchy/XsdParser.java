@@ -1,4 +1,4 @@
-package org.aellen.xml.xsd;
+package ch.galinet.xml.xsdhierarchy;
 
 import com.sun.xml.xsom.impl.ComplexTypeImpl;
 import com.sun.xml.xsom.impl.ElementDecl;

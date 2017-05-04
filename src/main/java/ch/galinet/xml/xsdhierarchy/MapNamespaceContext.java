@@ -1,4 +1,4 @@
-package org.aellen.xml.xsd;
+package ch.galinet.xml.xsdhierarchy;
 
 import javax.xml.namespace.NamespaceContext;
 import java.util.HashMap;

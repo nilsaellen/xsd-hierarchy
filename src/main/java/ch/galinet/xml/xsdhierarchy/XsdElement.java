@@ -1,4 +1,4 @@
-package org.aellen.xml.xsd;
+package ch.galinet.xml.xsdhierarchy;
 
 /**
  * Created by aellenn on 28.04.2017.
