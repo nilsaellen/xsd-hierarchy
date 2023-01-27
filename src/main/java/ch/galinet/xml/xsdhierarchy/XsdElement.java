@@ -1,38 +1,35 @@
 package ch.galinet.xml.xsdhierarchy;
 
-/**
- * Created by aellenn on 28.04.2017.
- */
 public class XsdElement {
-    private String namespace;
-    private String name;
+	private String namespace;
+	private String name;
 
-    public XsdElement() {
-    }
+	public XsdElement() {
+	}
 
-    public XsdElement(String namespace, String name) {
-        this.namespace = namespace;
-        this.name = name;
-    }
+	public XsdElement(String namespace, String name) {
+		this.namespace = namespace;
+		this.name = name;
+	}
 
-    public String getNamespace() {
-        return namespace;
-    }
+	public String getNamespace() {
+		return namespace;
+	}
 
-    public void setNamespace(String namespace) {
-        this.namespace = namespace;
-    }
+	public void setNamespace(final String namespace) {
+		this.namespace = namespace;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public void setName(final String name) {
+		this.name = name;
+	}
 
-    @Override
-    public String toString() {
-        return String.format("{%s}:%s", this.getNamespace(), this.getName());
-    }
+	@Override
+	public String toString() {
+		return String.format("{%s}:%s", this.getNamespace(), this.getName());
+	}
 }
